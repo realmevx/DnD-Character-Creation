@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 
-import MeetupList from '../components/meetups/MeetupList';
+import CharacterList from '../components/characters/CharacterList';
 
 function CustomPage() {
   

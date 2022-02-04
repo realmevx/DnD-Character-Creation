@@ -19,7 +19,7 @@ function MainNavigation() {
             <Link to='/custompage'>Custom Page</Link>
           </li>
           <li>
-            <Link to='/new-meetup'>Add New Character</Link>
+            <Link to='/new-Character'>Add New Character</Link>
           </li>
           <li>
             <Link to='/favorites'>

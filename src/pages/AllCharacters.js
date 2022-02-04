@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-import MeetupList from '../components/meetups/MeetupList';
+import CharacterList from '../components/characters/CharacterList';
 
-function AllMeetupsPage() {
+function AllCharactersPage() {
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedMeetups, setLoadedMeetups] = useState([]);
+  const [loadedcharacters, setLoadedcharacters] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -15,19 +15,19 @@ function AllMeetupsPage() {
         return response.json();
       })
       .then((data) => {
-        const meetups = [];
+        const characters = [];
 
         for (const key in data) {
-          const meetup = {
+          const Character = {
             id: key,
             ...data[key]
           };
 
-          meetups.push(meetup);
+          characters.push(Character);
         }
 
         setIsLoading(false);
-        setLoadedMeetups(meetups);
+        setLoadedcharacters(characters);
       });
   }, []);
 
@@ -42,9 +42,9 @@ function AllMeetupsPage() {
   return (
     <section>
       <h1>All Characters</h1>
-      <MeetupList meetups={loadedMeetups} />
+      <CharacterList characters={loadedcharacters} />
     </section>
   );
 }
 
-export default AllMeetupsPage;
+export default AllCharactersPage;

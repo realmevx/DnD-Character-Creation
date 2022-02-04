@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 
 import Card from '../ui/Card';
-import classes from './MeetupItem.module.css';
+import classes from './CharacterItem.module.css';
 import FavoritesContext from '../../store/favorites-context';
 
-function MeetupItem(props) {
+function CharacterItem(props) {
   const favoritesCtx = useContext(FavoritesContext);
 
   const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id);
@@ -44,4 +44,4 @@ function MeetupItem(props) {
   );
 }
 
-export default MeetupItem;
+export default CharacterItem;

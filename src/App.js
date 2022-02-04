@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
-import AllMeetupsPage from './pages/AllMeetups';
-import NewMeetupPage from './pages/NewMeetup';
+import AllcharactersPage from './pages/AllCharacters';
+import NewCharacterPage from './pages/NewCharacter';
 import FavoritesPage from './pages/Favorites';
 import CustomPage from './pages/CustomPage';
 import Layout from './components/layout/Layout';
@@ -11,10 +11,10 @@ function App() {
     <Layout>
       <Switch>
         <Route path='/' exact>
-          <AllMeetupsPage />
+          <AllcharactersPage />
         </Route>
-        <Route path='/new-meetup'>
-          <NewMeetupPage />
+        <Route path='/new-Character'>
+          <NewCharacterPage />
         </Route>
         <Route path='/favorites'>
           <FavoritesPage />

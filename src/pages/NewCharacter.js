@@ -1,16 +1,16 @@
 import { useHistory } from 'react-router-dom';
 
-import NewMeetupForm from '../components/meetups/NewMeetupForm';
+import NewCharacterForm from '../components/characters/NewCharacterForm';
 
-function NewMeetupPage() {
+function NewCharacterPage() {
   const history = useHistory();
 
-  function addMeetupHandler(meetupData) {
+  function addCharacterHandler(CharacterData) {
     fetch(
       'https://test-5ebb8-default-rtdb.firebaseio.com/characters.json',
       {
         method: 'POST',
-        body: JSON.stringify(meetupData),
+        body: JSON.stringify(CharacterData),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -23,9 +23,9 @@ function NewMeetupPage() {
   return (
     <section>
       <h1>Add New Character</h1>
-      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+      <NewCharacterForm onAddCharacter={addCharacterHandler} />
     </section>
   );
 }
 
-export default NewMeetupPage;
+export default NewCharacterPage;
