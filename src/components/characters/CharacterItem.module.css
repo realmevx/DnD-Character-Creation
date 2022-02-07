@@ -22,13 +22,18 @@
 
 .content p {
 
-  color: #2c292b;
+  color: #eeeeee;
 
 }
 
 .content h3 {
   font-size: 1.25rem;
-  color: #2c292b;
+  color: #eeeeee;
+}
+
+.content h4 {
+  font-size: 1.25rem;
+  color: #eeeeee;
 }
 
 .actions {
@@ -41,7 +46,7 @@
   cursor: pointer;
   color: #77002e;
   border: 1px solid #77002e;
-  background-color: transparent;
+ 
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
 }
