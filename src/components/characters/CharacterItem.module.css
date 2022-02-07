@@ -20,6 +20,12 @@
   padding: 1rem;
 }
 
+.content p {
+
+  color: #2c292b;
+
+}
+
 .content h3 {
   font-size: 1.25rem;
   color: #2c292b;

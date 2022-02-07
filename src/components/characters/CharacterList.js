@@ -9,8 +9,15 @@ function CharacterList(props) {
           key={Character.id}
           id={Character.id}
           image={Character.image}
-          title={Character.title}
-          address={Character.address}
+          name={Character.name}
+          race={Character.race}
+          alignment={Character.alignment}
+          class={Character.class}
+          dexterity={Character.dexterity}
+          strength={Character.strength}
+          wisdom={Character.wisdom}
+          intelligence={Character.intelligence}
+          charisma={Character.charisma}
           description={Character.description}
         />
       ))}

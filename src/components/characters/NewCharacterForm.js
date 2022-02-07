@@ -4,10 +4,18 @@ import Card from '../ui/Card';
 import classes from './NewCharacterForm.module.css';
 
 function NewCharacterForm(props) {
-  const titleInputRef = useRef();
+  const nameInputRef = useRef();
   const imageInputRef = useRef();
-  const addressInputRef = useRef();
+  const raceInputRef = useRef();
   const descriptionInputRef = useRef();
+  const alignmentInputRef = useRef();
+  const classInputRef = useRef();
+  const consitutionInputRef = useRef();
+  const strengthInputRef = useRef();
+  const wisdomInputRef = useRef();
+  const intelligenceInputRef = useRef();
+  const dexterityInputRef = useRef();
+  const charismaInputRef = useRef();
 
   const divStyle = {
     display: 'inline-block',
@@ -25,16 +33,30 @@ function NewCharacterForm(props) {
   function submitHandler(event) {
     event.preventDefault();
 
-    const enteredTitle = titleInputRef.current.value;
+    const enteredName = nameInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
-    const enteredAddress = addressInputRef.current.value;
+    const enteredRace = raceInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
+    const enteredClass = classInputRef.current.value;
+    const enteredAlignment = alignmentInputRef.current.value;
+    const enteredDexterity = dexterityInputRef.current.value;
+    const enteredStrength = strengthInputRef.current.value;
+    const enteredWisdom = wisdomInputRef.current.value;
+    const enteredIntelligence = intelligenceInputRef.current.value;
+    const enteredCharisma = charismaInputRef.current.value;
 
     const CharacterData = {
-      title: enteredTitle,
+      name: enteredName,
       image: enteredImage,
-      address: enteredAddress,
+      race: enteredRace,
       description: enteredDescription,
+      class: enteredClass,
+      alignment: enteredAlignment,
+      dexterity: enteredDexterity,
+      strength: enteredStrength,
+      wisdom: enteredWisdom,
+      intelligence: enteredIntelligence,
+      charisma: enteredCharisma
     };
 
     props.onAddCharacter(CharacterData);
@@ -45,7 +67,7 @@ function NewCharacterForm(props) {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='title'>Character Name</label>
-          <input type='text' required id='title' ref={titleInputRef} />
+          <input type='text' required id='title' ref={nameInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='image'>Character Image</label>
@@ -54,15 +76,15 @@ function NewCharacterForm(props) {
         <td style={tdStyle}>
         <div className={classes.control} style={divStyle}>
           <label htmlFor='race'>Race</label>
-          <input type='text' required id='race' ref={addressInputRef} />
+          <input type='text' required id='race' ref={raceInputRef} />
         </div>
         <div className={classes.control} style={divStyle}>
           <label htmlFor='alignment'>Alignment</label>
-          <input type='text' required id='alignment' ref={addressInputRef} />
+          <input type='text' required id='alignment' ref={alignmentInputRef} />
         </div>
         <div className={classes.control} style={divStyle}>
           <label htmlFor='class'>Class</label>
-          <input type='text' required id='class' ref={addressInputRef} />
+          <input type='text' required id='class' ref={classInputRef} />
         </div>
         </td>
         <div className={classes.control}>
@@ -77,41 +99,41 @@ function NewCharacterForm(props) {
         <div style={divStyle}className={classes.control}>
         <label for="Dexterity">Dexterity</label>
         <input type="number" id="dexterity" name="dexterity"
-       min="1" max="10" ></input>
+       min="1" max="10" ref={dexterityInputRef} ></input>
        
         </div>
         <div style={divStyle}className={classes.control}>
         <label for="Strength">Strength</label>
         <input type="number" id="strength" name="strength"
-       min="1" max="10" ></input>
+       min="1" max="10" ref={strengthInputRef}></input>
        
         </div>
 
         <div style={divStyle}className={classes.control}>
         <label for="Charisma">Charisma</label>
         <input type="number" id="charisma" name="charisma"
-       min="1" max="10" ></input>
+       min="1" max="10" ref={charismaInputRef}></input>
        
         </div>
 
         <div style={divStyle}className={classes.control}>
         <label for="Intelligence">Intelligence</label>
         <input type="number" id="intelligence" name="intelligence"
-       min="1" max="10" ></input>
+       min="1" max="10" ref={intelligenceInputRef}></input>
        
         </div>
 
         <div style={divStyle}className={classes.control}>
         <label for="Wisdom">Wisdom</label>
         <input type="number" id="wisdom" name="wisdom"
-       min="1" max="10" ></input>
+       min="1" max="10" ref={wisdomInputRef}></input>
        
         </div>
 
         <div style={divStyle}className={classes.control}>
         <label for="Constitution">Constitution</label>
         <input type="number" id="constitution" name="constitution"
-       min="1" max="10" ></input>
+       min="1" max="10" ref={consitutionInputRef}></input>
        
         </div>
 

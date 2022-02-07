@@ -15,10 +15,18 @@ function CharacterItem(props) {
     } else {
       favoritesCtx.addFavorite({
         id: props.id,
-        title: props.title,
+        name: props.name,
         description: props.description,
         image: props.image,
-        address: props.address,
+        race: props.race,
+        alignment: props.alignment,
+        class: props.class,
+        dexterity: props.dexterity,
+        strength: props.strength,
+        wisdom: props.wisdom,
+        constituion: props.constituion,
+        intelligence: props.intelligence,
+        charisma: props.charisma,
       });
     }
   }
@@ -30,9 +38,10 @@ function CharacterItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
+          <h3>{props.name}</h3>
+          <h4>{props.alignment + " " + props.race + " " + props.class}</h4>
           <p>{props.description}</p>
+          <p>{"Dexterity: " + props.dexterity+ " Strength: " +props.strength+ " Wisdom: " +props.wisdom+ " Intelligence: " +props.intelligence+ " Charisma: " +props.charisma}</p>
         </div>
         <div className={classes.actions}>
           <button onClick={toggleFavoriteStatusHandler}>
