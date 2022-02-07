@@ -10,7 +10,7 @@ function NewCharacterForm(props) {
   const descriptionInputRef = useRef();
   const alignmentInputRef = useRef();
   const classInputRef = useRef();
-  const consitutionInputRef = useRef();
+  const constitutionInputRef = useRef();
   const strengthInputRef = useRef();
   const wisdomInputRef = useRef();
   const intelligenceInputRef = useRef();
@@ -44,6 +44,7 @@ function NewCharacterForm(props) {
     const enteredWisdom = wisdomInputRef.current.value;
     const enteredIntelligence = intelligenceInputRef.current.value;
     const enteredCharisma = charismaInputRef.current.value;
+    const enteredConstitution = constitutionInputRef.current.value;
 
     const CharacterData = {
       name: enteredName,
@@ -56,7 +57,8 @@ function NewCharacterForm(props) {
       strength: enteredStrength,
       wisdom: enteredWisdom,
       intelligence: enteredIntelligence,
-      charisma: enteredCharisma
+      charisma: enteredCharisma,
+      constitution: enteredConstitution
     };
 
     props.onAddCharacter(CharacterData);
@@ -92,6 +94,7 @@ function NewCharacterForm(props) {
           <textarea
             id='description'
             required
+            minLength="50"
             rows='5'
             ref={descriptionInputRef}
           ></textarea>
@@ -133,7 +136,7 @@ function NewCharacterForm(props) {
         <div style={divStyle}className={classes.control}>
         <label for="Constitution">Constitution</label>
         <input type="number" id="constitution" name="constitution"
-       min="1" max="10" ref={consitutionInputRef}></input>
+       min="1" max="10" ref={constitutionInputRef}></input>
        
         </div>
 

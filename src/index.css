@@ -4,10 +4,21 @@
   box-sizing: border-box;
 }
 
+html {
+
+  height:auto;
+
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  background-color: #2e2e2e;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+
+    background-image: linear-gradient(
+    to bottom, transparent, #77002e
+  ), url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700874517.jpg");
 }
 
 h1 {

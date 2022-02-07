@@ -18,6 +18,7 @@ function CharacterList(props) {
           wisdom={Character.wisdom}
           intelligence={Character.intelligence}
           charisma={Character.charisma}
+          constitution={Character.constitution}
           description={Character.description}
         />
       ))}

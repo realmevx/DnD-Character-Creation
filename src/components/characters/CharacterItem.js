@@ -24,7 +24,7 @@ function CharacterItem(props) {
         dexterity: props.dexterity,
         strength: props.strength,
         wisdom: props.wisdom,
-        constituion: props.constituion,
+        constitution: props.constitution,
         intelligence: props.intelligence,
         charisma: props.charisma,
       });
@@ -41,7 +41,13 @@ function CharacterItem(props) {
           <h3>{props.name}</h3>
           <h4>{props.alignment + " " + props.race + " " + props.class}</h4>
           <p>{props.description}</p>
-          <p>{"Dexterity: " + props.dexterity+ " Strength: " +props.strength+ " Wisdom: " +props.wisdom+ " Intelligence: " +props.intelligence+ " Charisma: " +props.charisma}</p>
+          <p><em style={{ color:'Green' }}>Dexterity: </em> 
+          {+ props.dexterity } <em style={{ color:'Red' }}>Strength: </em>
+          {+ props.strength } <em style={{ color:'gray' }}>Wisdom: </em>
+          {+ props.wisdom } <em style={{ color:'blue' }}>Intelligence: </em>
+          {+ props.intelligence } <em style={{ color:'cyan' }}>Constitution: </em>
+          {+ props.constitution } <em style={{ color:'orange' }}>Charisma: </em> 
+          {+ props.charisma } </p>
         </div>
         <div className={classes.actions}>
           <button onClick={toggleFavoriteStatusHandler}>
