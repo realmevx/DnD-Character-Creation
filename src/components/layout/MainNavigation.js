@@ -16,7 +16,7 @@ function MainNavigation() {
             <Link to='/'>All Characters</Link>
           </li>
           <li>
-            <Link to='/custompage'>Custom Page</Link>
+            <Link to='/Arena'>Arena</Link>
           </li>
           <li>
             <Link to='/new-Character'>Add New Character</Link>
