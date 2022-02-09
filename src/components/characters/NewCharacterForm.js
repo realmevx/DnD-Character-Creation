@@ -28,6 +28,30 @@ function NewCharacterForm(props) {
     'white-space':'nowrap'
     
   };
+
+  //sends header and body with data into the flask server
+async function translate(text) {
+	//loaderDiv = document.getElementById("loaderDiv");
+	//loaderDiv.style.display = "block";
+	var myH = new Headers({
+		'Access-Control-Allow-Origin': '*'
+	});
+
+	//assign response data to text output, hide loading div
+	const response = await fetch(new URL("http://localhost:5000/translate"), {
+		body: text,
+		headers: myH,
+		method: 'POST',
+		mode: 'cors', // no-cors, *cors, same-origin
+	});
+	var ans = await response.text();
+  console.log(ans);
+  const answer = ans;
+  console.log(answer);
+	return answer;
+	//document.getElementById('translationOutput').value = ans;
+	//loaderDiv.style.display = "none";
+}
   
 
   function submitHandler(event) {
@@ -45,14 +69,16 @@ function NewCharacterForm(props) {
     const enteredIntelligence = intelligenceInputRef.current.value;
     const enteredCharisma = charismaInputRef.current.value;
     const enteredConstitution = constitutionInputRef.current.value;
-
+    
+    const testAlignment = translate(enteredDescription);
+    
     const CharacterData = {
       name: enteredName,
       image: enteredImage,
       race: enteredRace,
       description: enteredDescription,
       class: enteredClass,
-      alignment: enteredAlignment,
+      alignment: testAlignment,
       dexterity: enteredDexterity,
       strength: enteredStrength,
       wisdom: enteredWisdom,
@@ -60,7 +86,7 @@ function NewCharacterForm(props) {
       charisma: enteredCharisma,
       constitution: enteredConstitution
     };
-
+    
     props.onAddCharacter(CharacterData);
   }
 
