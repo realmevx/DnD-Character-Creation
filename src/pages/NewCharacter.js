@@ -6,6 +6,7 @@ function NewCharacterPage() {
   const history = useHistory();
 
   function addCharacterHandler(CharacterData) {
+    
     fetch(
       'https://test-5ebb8-default-rtdb.firebaseio.com/characters.json',
       {

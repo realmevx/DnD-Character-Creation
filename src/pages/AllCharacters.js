@@ -39,9 +39,11 @@ function AllCharactersPage() {
     );
   }
 
+  
   return (
     <section>
       <h1>All Characters</h1>
+    
       <CharacterList characters={loadedcharacters} />
     </section>
   );

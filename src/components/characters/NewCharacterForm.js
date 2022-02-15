@@ -1,7 +1,9 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Card from '../ui/Card';
 import classes from './NewCharacterForm.module.css';
+
+
 
 function NewCharacterForm(props) {
   const nameInputRef = useRef();
@@ -30,7 +32,11 @@ function NewCharacterForm(props) {
   };
 
   //sends header and body with data into the flask server
+
+
+
 async function translate(text) {
+  
 	//loaderDiv = document.getElementById("loaderDiv");
 	//loaderDiv.style.display = "block";
 	var myH = new Headers({
@@ -45,17 +51,16 @@ async function translate(text) {
 		mode: 'cors', // no-cors, *cors, same-origin
 	});
 	var ans = await response.text();
-  console.log(ans);
-  const answer = ans;
-  console.log(answer);
-	return answer;
-	//document.getElementById('translationOutput').value = ans;
-	//loaderDiv.style.display = "none";
+  
+	return ans;
+
 }
   
 
   function submitHandler(event) {
     event.preventDefault();
+    
+
 
     const enteredName = nameInputRef.current.value;
     const enteredImage = imageInputRef.current.value;
@@ -70,24 +75,31 @@ async function translate(text) {
     const enteredCharisma = charismaInputRef.current.value;
     const enteredConstitution = constitutionInputRef.current.value;
     
-    const testAlignment = translate(enteredDescription);
+    translate(enteredDescription)
+    .then(result => {
+      const testAlignment = result;
+      const CharacterData = {
+        name: enteredName,
+        image: enteredImage,
+        race: enteredRace,
+        description: enteredDescription,
+        class: enteredClass,
+        alignment: testAlignment,
+        dexterity: enteredDexterity,
+        strength: enteredStrength,
+        wisdom: enteredWisdom,
+        intelligence: enteredIntelligence,
+        charisma: enteredCharisma,
+        constitution: enteredConstitution
+      };
+      props.onAddCharacter(CharacterData);
+    })
+
     
-    const CharacterData = {
-      name: enteredName,
-      image: enteredImage,
-      race: enteredRace,
-      description: enteredDescription,
-      class: enteredClass,
-      alignment: testAlignment,
-      dexterity: enteredDexterity,
-      strength: enteredStrength,
-      wisdom: enteredWisdom,
-      intelligence: enteredIntelligence,
-      charisma: enteredCharisma,
-      constitution: enteredConstitution
-    };
     
-    props.onAddCharacter(CharacterData);
+  
+    
+    
   }
 
   return (
